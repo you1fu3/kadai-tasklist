@@ -13,6 +13,10 @@
             <th>タスク</th>
             <td>{{ $test->content }}</td>
         </tr>
+        <tr>
+            <th>ステータス</th>
+            <td>{{ $test->status }}</td>
+        </tr>
     </table>
     {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $test->id], ['class' => 'btn btn-info']) !!}
     
