@@ -1,10 +1,6 @@
-@extends('layouts.app')
+<h1>タスク一覧</h1>
 
-@section('content')
-
-    <h1>タスク一覧</h1>
-
-    @if (count($tests) > 0)
+     @if (count($tests) > 0)
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -23,7 +19,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $tests->links('pagination::bootstrap-4') }}
     @endif
-    {!! link_to_route('tasks.create','新規タスク登録',[],['class' => 'btn btn-info']) !!}
-
-@endsection
+{!! link_to_route('tasks.create','新規タスク登録',[],['class' => 'btn btn-info']) !!}
